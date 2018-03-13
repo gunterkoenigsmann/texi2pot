@@ -22,7 +22,7 @@ print "<?xml version=\"1.0\"?>\n";
 print "<!DOCTYPE texifile [\n";
 print "<!ELEMENT texifile (paragraph)>\n";
 print "<!ELEMENT paragraph (#PCDATA)>\n";
-print "]>\n\n";
+print "]>\n";
 print "<texifile>\n";
     
 $lastline = "";
