@@ -61,8 +61,8 @@ Also for .po files there is extensive support for adding changes from the list
 of original strings (a .pot file) to a file with translations of an possibly
 much older version (a .po file).
 
-The solution
-------------
+The easy solution
+-----------------
 This repository contains two tools: texi2pot.pl, a perl script that converts
 a texinfo file into separate strings in the .po format msgmerge and the other
 translation tools from gettext will recognize and po2texi.pl, that convert
@@ -73,11 +73,11 @@ file back to one .texi file. And they are lacking many features like a --help
 switch. But - I wanted to upload them somewhere as a starting point for others
 that face the problem of keeping a translation of a big piece of text current.
 
-Is there a better solution
---------------------------
-Another solution would have been to package every paragraph of the .texi file
-in an xml node that is marked as "translatable" and to provide a xsl transform
-that converts this node back to a .texi file, after it has been translated.
-This method would requires more transforms of the data. But it is lossless
-and looks like being a more canonical way => if someone implements it - or has
-already implemented it perhaps this method is to be preferred.
+The better solution
+-------------------
+xml files support internationalization =>
+ - package the .texi file in an xml
+ - internationalize the xml
+ - that convert it back to a .texi file
+The perl script that does the first step and the dtd that does the 3rd can be
+found in this repo, too.
